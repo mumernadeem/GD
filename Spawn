@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnManager : MonoBehaviour
+{
+    private float delay = 2f, repeat = 5f;
+    Vector3 Spawn = new Vector3(-35, -6, -6);
+    public GameObject obj;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        InvokeRepeating("SpawnObject", delay, repeat);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
+    }
+
+    void SpawnObject()
+    {
+        Instantiate(obj, Spawn, obj.transform.rotation);
+    }
+}
+
